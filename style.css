@@ -1,0 +1,274 @@
+body {
+    margin: 0;
+    height: 100vh;
+    font-family: 'Segoe UI',
+sans-serif;
+    color: white;
+    text-align: center;
+    overflow: auto;
+
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+header {
+    padding: 60px 20px;
+    z-index: 1;
+    position: relative;
+}
+
+.content {
+    padding: 40px 20px;
+    z-index: 1;
+    position: relative;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translately(20px);
+    animation: fadeInUp 1s ease forwards;
+}
+
+.fade-in.delay {
+    animation-delay: 0.5s;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.fade-in-up {
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+}
+
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+
+.education-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+.education-card {
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3 ease;
+}
+
+
+.education-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+
+.institution {
+    font-weight: bold;
+    color: #555;
+}
+
+
+.year {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+
+@media (max-width: 600px) {
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .education-card {
+        padding: 15px;
+    }
+
+    .institution {
+        font-size: 1rem;
+    }
+
+    .year {
+        font-size: 0.85rem;
+    }
+}
+
+.cta-button {
+    background: #ffffff;
+    color: #0077cc;
+    border: none;
+    padding: 12px 24px;
+    margin-top: 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+
+.cta-button:hover {
+    background: #f0f0f0;
+    transform: scale(1.05);
+}
+
+.bubbles {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+}
+
+.bubbles span {
+    position: absolute;
+    display: block;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.15);
+    bottom: -100px;
+    border-radius: 50%;
+    animation: rise 20s linear infinite;
+}
+
+.bubbles span:nth-child(1) {
+    left: 10%; animation-duration: 12s; width: 20px; height: 20px;
+}
+.bubbles span:nth-child(2) {
+    left: 20%; animation-duration: 15s;
+}
+.bubbles span:nth-child(3) {
+    left: 25%; animation-duration: 10s; width: 60px; height: 60px;
+}
+.bubbles span:nth-child(4) {
+    left: 40%; animation-duration: 18s;
+}
+.bubbles span:nth-child(5) {
+    left: 50%; animation-duration: 14s; width: 25px; height: 25px;
+}
+.bubbles span:nth-child(6) {
+    left: 70%; animation-duration: 16s; width: 55px; height: 55px;
+}
+.bubbles span:nth-child(7) {
+    left: 80%; animation-duration: 13s;
+}
+.bubbles span:nth-child(8) {
+    left: 90%; animation-duration: 17s; width: 30px; height: 30px;
+}
+.bubbles span:nth-child(9) {
+    left: 95%; animation-duration: 11s; width: 45px; height: 45px;
+}
+.bubbles span:nth-child(10) {
+    left: 60%; animation-duration: 19s;
+}
+
+@keyframes rise {
+    0% {
+        transform: translateY(0)
+    scale(1);
+        opacity: 0.3;
+    }
+    100% {
+        transform: translateY(-1000px)
+    scale(1.5);
+        opacity: 0;
+    }
+}
+
+.content {
+    background: rgba(255, 255, 255, 0.05);
+    margin: 20px auto;
+    padding: 30px;
+    max-width: 700px;
+    border-radius: 16px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+
+.content h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+
+.content p, .content ul {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+
+.content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+
+.content ul li {
+    content: '✨ ';
+    margin-right: 5px;
+    color: gold;
+}
+
+
+a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+
+footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 8px;
+    text-align: center;
+    padding: 15px 10px;
+    font-size: 14px
+}
+
+#contact {
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+@media (max-width: 600px) {
+    #contact {
+        padding: 15px 10px;
+        font-size: 14px;
+    }
+
+    footer {
+        padding: 10px 5px;
+        font-size: 12px;
+    }
+}
